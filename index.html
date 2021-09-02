@@ -36,8 +36,9 @@
 
         <span class="navbar-text">
             <!--<a data-toggle="modal" data-target="#loginModal">-->
-            <a>
-            <span class="fa fa-sign-in"></span> Login</a>
+                  <!--Activate modal with javascript & trigger modal with a button-->
+            <button id="loginbtn">
+            <span class="fa fa-sign-in"></span> Login</button>
         </span>
   
     </div>
@@ -106,7 +107,7 @@
                   <!--the data-attributes i removed here > <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveform" >Reserve Table</a>-->  
                 <div class="col-12 col-sm align-self-center">
                     <span class="button-text">  <!--if i use button tag it just click,but if i use a tag button class it'll take the link into own page-->
-                      <a role="button" class="btn btn-block nav-link btn-warning" >Reserve Table</a>
+                      <a role="button" class="btn btn-block nav-link btn-warning" id="reservebtn" >Reserve Table</a>
                    </span>
                 </div>
                    
@@ -219,7 +220,8 @@
             </div>
         </div>
 
-        <div id="reserveform" class="modal modal fade"role="dialog">
+      
+        <div id="reserveform" class="modal modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                   <div class="col-12">
@@ -380,15 +382,23 @@
            });
 
        </script>
-            
-           <!--<script>
-                $(document).ready(function()
-                {
-                    $('[data-toggle="tooltip"]').tooltip();
-                })
-            </script>
-             --> 
-       
+         
+   <script>
+        $(document).ready(function(){
+          $("#reservebtn").click(function(){
+            $("#reserveform").modal();
+         });
+         });
+    </script>
+    
+    
+    <script>
+        $(document).ready(function(){
+            $("#loginbtn").click(function(){
+                $("#loginModal").modal();
+            });
+        });
+
     </script>
 
     </body>
